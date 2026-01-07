@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PastoralApp - Gestão Pastoral Simplificada</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script src="assets/js/tailwind.config.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="font-sans text-textMain antialiased bg-white overflow-x-hidden">
+
+    <!-- 1. HEADER (Floating Island) -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-auto max-w-5xl transition-all duration-300">
+        <div
+            class="bg-white/90 backdrop-blur-md border border-white/20 shadow-xl rounded-full px-6 py-3 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer mr-0 md:mr-8">
+                <!-- Icon -->
+                <img src="assets/images/pastoral_icon.png" alt="Logo" class="w-6 h-6 md:w-7 md:h-7 object-contain">
+                <span class="font-bold text-lg md:text-xl tracking-tight text-primary">PastoralApp</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-6">
+                <!-- Links -->
+                <div class="flex items-center gap-6 px-4 border-l border-r border-gray-200/50">
+                    <a href="#solucao"
+                        class="text-sm font-medium text-textMain hover:text-primary transition-colors">Solução</a>
+                    <a href="#funcionalidades"
+                        class="text-sm font-medium text-textMain hover:text-primary transition-colors">Funcionalidades</a>
+                    <a href="#publico"
+                        class="text-sm font-medium text-textMain hover:text-primary transition-colors">Para Quem</a>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex items-center gap-3">
+                    <a href="#" class="text-primary text-sm font-semibold hover:underline">Login</a>
+                    <a href="#"
+                        class="bg-primary hover:bg-red-700 text-white text-sm px-5 py-2 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Criar Conta
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex md:hidden">
+                <button id="mobile-menu-btn" class="text-textMain hover:text-primary focus:outline-none p-1"
+                    aria-label="Abrir menu">
+                    <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="icon-close" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown (Floating detached) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full mt-2">
+            <div
+                class="bg-white/95 backdrop-blur-xl border border-gray-100 rounded-2xl shadow-2xl p-4 flex flex-col gap-2 mx-1">
+                <a href="#solucao"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-textMain hover:bg-red-50 hover:text-primary transition-colors">Solução</a>
+                <a href="#funcionalidades"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-textMain hover:bg-red-50 hover:text-primary transition-colors">Funcionalidades</a>
+                <a href="#publico"
+                    class="block px-4 py-3 rounded-xl text-sm font-medium text-textMain hover:bg-red-50 hover:text-primary transition-colors">Para
+                    Quem</a>
+                <div class="border-t border-gray-100 mt-2 pt-3 flex flex-col gap-2">
+                    <a href="#" class="w-full text-center text-primary font-semibold py-2 text-sm">Login</a>
+                    <a href="#"
+                        class="w-full text-center bg-primary text-white px-5 py-3 rounded-xl font-bold text-sm shadow-md">
+                        Criar Conta
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section
+        class="relative pt-52 md:pt-80 pb-40 md:pb-80 px-4 overflow-hidden bg-[url('assets/images/aparecida-image.jpg')] bg-cover bg-center bg-no-repeat">
+        <!-- Overlay for readability -->
+        <div class="absolute inset-0 bg-white/60 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-red-50 text-primary text-sm font-semibold tracking-wide mb-6 border border-red-100">
+                🚀 A Revolução na Gestão Pastoral
+            </span>
+
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-textMain mb-6 leading-tight">
+                Organize sua Igreja com <br class="hidden md:block" />
+                <span class="text-primary relative inline-block">
+                    Simplicidade e Poder
+                    <svg class="absolute w-full h-3 -bottom-1 left-0 text-secondary -z-10" viewBox="0 0 100 10"
+                        preserveAspectRatio="none">
+                        <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
+                    </svg>
+                </span>
+            </h1>
+
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 mb-10 leading-relaxed">
+                Deixe as planilhas complicadas no passado. Tenha o controle total de membros, dízimos e eventos na palma
+                da sua mão.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-4 w-full md:w-auto px-4 md:px-0">
+                <a href="#"
+                    class="w-full md:w-auto bg-primary hover:bg-red-700 text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 block md:inline-block">
+                    Começar Grátis Agora
+                </a>
+                <a href="#funcionalidades"
+                    class="w-full md:w-auto bg-white border-2 border-gray-200 hover:border-primary/30 hover:bg-gray-50 text-textMain font-semibold text-lg px-8 py-4 rounded-xl transition-all block md:inline-block">
+                    Ver Como Funciona
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- 3. COMPARATIVE SECTION (O Caos vs A Solução) -->
+    <section id="solucao" class="relative py-16 md:py-24 bg-neutral-light px-4 md:px-6">
+        <!-- Transition Gradient & Divider (Top Attached to blend Hero) -->
+        <div class="absolute top-0 left-0 w-full z-20 pointer-events-none transform -translate-y-full">
+            <!-- White Gradient Fade -->
+            <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
+            <!-- Divider Line -->
+            <div
+                class="absolute bottom-0 w-full h-20 bg-[url('assets/images/divisor.png')] bg-repeat-x bg-contain bg-bottom">
+            </div>
+        </div>
+
+        <!-- Top White Gradient (Into Section) -->
+        <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-4xl font-bold text-textMain mb-4">Centralização em um único sistema</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hoje toda a comunidade sente a falta de uma ferramenta que
+                    nos conecta e nos ajuda a seguir um propósito sem distrações. </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+                <!-- O Caos -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 relative overflow-hidden group hover:shadow-md transition-shadow">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gray-300"></div>
+                    <div class="mb-6 flex items-center gap-3">
+                        <div class="bg-gray-100 p-3 rounded-full">
+                            <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-500">Rede Sociais atuais</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-gray-500">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Conteúdo tóxico, superficial e mundano.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-500">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Falta de segurança e controle sobre o que é postado.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-500">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Informações de valor sobre a Igreja perdidas e bagunçadas</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-500">
+                            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Sem uma comunidade unida e unificada por um único foco.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- A Solução -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-xl border-2 border-primary/10 relative overflow-hidden transform md:-translate-y-4">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+                    <div class="mb-6 flex items-center gap-3">
+                        <div class="bg-red-100 p-3 rounded-full">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary">Com PastoralApp</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-textMain font-medium">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Ambiente de Propósito, Não de Distração.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-textMain font-medium">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Segurança e Controle Total.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-textMain font-medium">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Informação de valor Organizada e Acessível.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-textMain font-medium">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>Unidade e Identidade Comunitária.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FEATURES SECTION (Cards) -->
+    <section id="funcionalidades" class="py-16 md:py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-secondary font-bold uppercase tracking-widest text-sm">Funcionalidades</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-textMain mt-2">Tudo o que você precisa</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+                        <img src="assets/images/pastoral_icon.png" alt="Icon" class="w-8 h-8 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Gestão de Membros</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Cadastre membros, visitantes e famílias. Tenha todo o histórico pastoral em um só lugar.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+                        <img src="assets/images/pastoral_icon.png" alt="Icon" class="w-8 h-8 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Financeiro</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Controle de dízimos, ofertas e despesas. Relatórios automáticos para o conselho fiscal.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+                        <img src="assets/images/pastoral_icon.png" alt="Icon" class="w-8 h-8 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain mb-3">Agenda & Eventos</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Calendário da igreja, inscrições em eventos e gestão de voluntários para escalas.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-white p-6 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div
+                        class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6 overflow-hidden">
+                        <img src="assets/images/pastoral_icon.png" alt="Icon" class="w-8 h-8 object-contain">
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain mb-3">App para Membros</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Os membros podem ver a agenda, fazer doações e receber avisos diretamente pelo celular.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TARGET AUDIENCE -->
+    <section id="publico" class="py-16 md:py-24 bg-primary text-white px-4 md:px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-8">Feito para quem ama a igreja</h2>
+                    <div class="flex flex-col gap-8">
+
+                        <div class="flex gap-4">
+                            <div
+                                class="w-12 h-12 flex-shrink-0 bg-white/20 rounded-full flex items-center justify-center overflow-hidden">
+                                <img src="assets/images/pastoral_icon.png" alt="Icon"
+                                    class="w-6 h-6 object-contain brightness-0 invert">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Pastores e Líderes</h3>
+                                <p class="text-white/80">Tenha visão macro do seu rebanho e tome decisões baseadas em
+                                    dados reais.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="w-12 h-12 flex-shrink-0 bg-white/20 rounded-full flex items-center justify-center overflow-hidden">
+                                <img src="assets/images/pastoral_icon.png" alt="Icon"
+                                    class="w-6 h-6 object-contain brightness-0 invert">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Secretaria e Adm</h3>
+                                <p class="text-white/80">Automatize tarefas repetitivas e ganhe tempo para o que
+                                    realmente importa: pessoas.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-sm border border-white/20 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Comece sua transformação hoje</h3>
+                    <p class="mb-8 text-white/90">Teste grátis por 14 dias. Sem cartão de crédito.</p>
+                    <a href="#"
+                        class="inline-block w-full bg-secondary text-textMain hover:bg-yellow-300 font-bold py-4 rounded-xl shadow-lg transition-transform hover:-translate-y-1">
+                        Criar Conta Gratuita
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 border-t border-gray-800">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+
+            <div class="mb-4 md:mb-0">
+                <span class="text-2xl font-bold text-white block mb-2">PastoralApp</span>
+                <p class="text-sm">Simplificando a gestão eclesiástica.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8 text-sm font-medium">
+                <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+                <a href="#" class="hover:text-white transition-colors">Suporte</a>
+            </div>
+
+            <div class="text-xs text-gray-600">
+                &copy; 2026 PastoralApp. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
